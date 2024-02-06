@@ -1,0 +1,254 @@
+
+
+*{
+    margin:0px;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex ;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+
+
+/* - ------------------- -- - - - - - -- - - -- - - - - -- - - - -- - - - - - -- - - - -- - - - - -- - - - - -- ------ -------------------- - - - -- - - - - - -- - - - -- - - - - - -- - - - -- - - - - -- - - - - -- - - - -- - - - - -- - - - - -- - - - - -- - - - --  -- - - - -- - - - -- - - - -- - ---- -------------------- -- - --------------------------------------------------------------------------------*/
+
+button {
+
+    position: absolute; 
+    z-index: 2;
+    cursor: pointer; 
+     /* Permite que el botón responda a eventos de puntero */
+}
+
+.circle {
+    /*z-index: 1; */
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border: 2px solid black; /* Cambiado de 'border-color' a 'border' con grosor especificado */
+    border-radius: 50%;
+    /* overflow: hidden; */
+    
+}
+
+
+.inner-circle {
+    
+    width: 200px; /* Ajusta el tamaño del círculo interior según sea necesario */
+    height: 200px; /* Ajusta el tamaño del círculo interior según sea necesario */
+    background-color: lightblue; /* Cambia el color del círculo interior según sea necesario */
+    border: 2px solid black;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el círculo interior en el círculo exterior */
+    z-index: 2;   /*Asegura que inner-circle esté sobre las líneas */
+}
+  
+
+
+/* Rotar cada línea según su posición en el círculo */
+.line:nth-child(1) { transform: rotate(0deg); }
+.line:nth-child(2) { transform: rotate(30deg); } 
+.line:nth-child(3) { transform: rotate(60deg); }
+.line:nth-child(4) { transform: rotate(90deg); }
+.line:nth-child(5) { transform: rotate(120deg); }
+.line:nth-child(6) { transform: rotate(150deg); }
+.line:nth-child(7) { transform: rotate(180deg); }
+.line:nth-child(8) { transform: rotate(210deg); }
+.line:nth-child(9) { transform: rotate(240deg); }
+.line:nth-child(10) { transform: rotate(270deg); }
+.line:nth-child(11) { transform: rotate(300deg); }
+.line:nth-child(12) { transform: rotate(330deg); }
+
+
+.line {
+    position: absolute;
+    width: 2px; 
+    height: 250px; 
+    background-color: #121213;
+    left: 50%;
+    top: 0px;
+    transform-origin: 50% 100%;
+    /* z-index: 3;  Asegura que inner-circle esté sobre las líneas */
+}
+
+
+.lines {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.lines-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+.cuadrado {
+    
+
+    transform-origin: 0% 0%;
+    z-index: 1;
+    width: 250px;
+    height: 250px;
+}
+
+.primero {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #ff3355; 
+    transform: translate(0%, 0%) rotate(-30deg);
+    cursor: pointer; 
+}
+
+.segundo {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #33fff5; 
+    transform: translate(0%, 0%) rotate(-60deg);
+}
+
+.tercero {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #ff33b1; 
+    transform: translate(0%, 0%) rotate(-90deg);
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.cuadrado_dos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    z-index: 1;
+}
+
+.cuarto {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #be33ff; 
+    transform: translate(0%, 0%) rotate(-120deg); /* Combinar ambas transformaciones */
+}
+
+
+.quinto {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #858585; 
+    transform: translate(0%, 0%) rotate(-150deg); /* Combinar ambas transformaciones */
+}
+
+
+.sexto {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #3366ff; 
+    transform: translate(0%, 0%) rotate(180deg); /* Combinar ambas transformaciones */  
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.cuadrado_tres {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    z-index: 1;
+}
+
+.septimo {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #0f0e0e; 
+    transform: translate(0%, 0%) rotate(-210deg); /* Combinar ambas transformaciones */
+    transform-origin: 0% 0%;
+}
+
+
+.octavo {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #a18262; 
+    transform: translate(0%, 0%) rotate(-240deg); /* Combinar ambas transformaciones */
+}
+
+
+.noveno {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #9b111e; 
+    transform: translate(0%, 0%) rotate(-270deg); 
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.cuadrado_cuatro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    z-index: 1;
+}
+
+.decimo {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #00825a; 
+    transform: translate(0%, 0%) rotate(-300deg); /* Combinar ambas transformaciones */
+}
+
+
+.once {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #382c1e; 
+    transform: translate(0%, 0%) rotate(-330deg); /* Combinar ambas transformaciones */
+}
+
+
+.doce {
+    border-style: solid;
+    border-width: 250px 145px 0px; 
+    border-color: transparent transparent transparent #0061a9; 
+    transform: translate(0%, 0%) rotate(-360deg); /* Combinar ambas transformaciones */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

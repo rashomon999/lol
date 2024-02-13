@@ -5,7 +5,7 @@
 $sentenciaSQL= $conexion->prepare("SELECT * FROM libros");
 $sentenciaSQL->execute();
 $listaLibros= $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-$links = ["matematicas/index.php", "musica/index.php"];
+$links = ["matematicas/index.php", "musica/index.php", "ecuaciones/index.php"];
 
 ?>
 

@@ -4,7 +4,17 @@
 con una forma especifica 
 (!) mas que todo tratar de encontrar como desacerse de lo transparente, del espacio que ocupa
 -->
+<?php
+if($_POST){
+  print('holaaa');
+}
 
+$checkSvg ='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+<path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+</svg>';
+
+$hola = '';
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,9 +25,9 @@ con una forma especifica
     body {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      align-items: Top;
+      height: 500vh;
+      margin: 0px;
     }
 
     .contenedor {
@@ -28,6 +38,8 @@ con una forma especifica
       border-radius: 50%; /* Hace que el contenedor sea un círculo */
       border: 2px solid #000;
       overflow:hidden;
+      transform: rotate(15deg); /* Rotar el círculo 15 grados hacia la derecha */
+      margin-top: 20px;
     }
 
     .inner-circle {
@@ -82,7 +94,8 @@ con una forma especifica
       top: 50%;
       left: 50%;
       border-width: 250px 145px 0px;
-      border-color: transparent transparent transparent #3498db;
+      border-color: #3498db #3498db #3498db #3498db;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
     .triangulo-rectangulo {
@@ -93,6 +106,7 @@ con una forma especifica
       left: 50%;
       border-left: 72.25px solid #808000;
       border-top: 125px solid transparent;
+      clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
     .boton-triangulo-dos {
@@ -101,7 +115,8 @@ con una forma especifica
         left: 59%;
         transform: translate(0%, 0%) rotate(-30deg);
         border-width: 250px 145px 0px;
-        border-color: transparent transparent transparent #CD5C5C;
+        border-color: #CD5C5C #CD5C5C #CD5C5C #CD5C5C;
+        clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
     .triangulo-rectangulo-dos {
@@ -111,6 +126,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-30deg);
         border-left: 72.25px solid #008080;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
     .boton-triangulo-tres {
@@ -121,25 +137,28 @@ con una forma especifica
       left: 56.55%;
       transform: translate(0%, 0%) rotate(-60deg);
       border-width: 250px 145px 0px;
-      border-color: transparent transparent transparent #00FF00;
+      border-color: #00FF00 #00FF00 #00FF00 #00FF00;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
-
+    /* transparent */
     .triangulo-rectangulo-tres {
         position: absolute;
         top: 23.50%;
         left: 66%;
         transform: translate(0%, 0%) rotate(-60deg);
         border-left: 72.25px solid #008000;
-        border-top: 125px solid transparent;
+        border-top: 125px solid  #008000;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
-
+    /* (0% 0%, 50% 50%, 0% 50%) */
     .boton-triangulo-cuatro {
       position: absolute;
       top: -5.50%;
       left: 45%;
       transform: translate(0%, 0%) rotate(-90deg);
       border-width: 250px 145px 0px;
-      border-color: transparent transparent transparent #00FFFF;
+      border-color:  #00FFFF #00FFFF #00FFFF #00FFFF;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
 
@@ -150,6 +169,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-90deg);
         border-left: 72.25px solid #82E0AA;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
 
@@ -159,7 +179,8 @@ con una forma especifica
       left: 27.50%;
       transform: translate(0%, 0%) rotate(-120deg);
       border-width: 250px 145px 0px;
-      border-color: transparent transparent transparent #F1C40F;
+      border-color: #F1C40F #F1C40F #F1C40F #F1C40F; 
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
 
@@ -170,6 +191,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-120deg);
         border-left: 72.25px solid #7D3C98;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
 
@@ -179,7 +201,8 @@ con una forma especifica
       left: 6.50%;
       border-width: 250px 145px 0px;
       transform: translate(0%, 0%) rotate(-150deg);
-      border-color: transparent transparent transparent #3498db;
+      border-color: #3498db #3498db #3498db #3498db;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
     .triangulo-rectangulo-seis {
@@ -189,6 +212,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-150deg);
         border-left: 72.25px solid #0E6655;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
     
     .boton-triangulo-siete {
@@ -198,6 +222,7 @@ con una forma especifica
       border-width: 250px 145px 0px;
       transform: translate(0%, 0%) rotate(-180deg);
       border-color: transparent transparent transparent #BFC9CA;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
 
@@ -208,6 +233,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-180deg);
         border-left: 72.25px solid #BFC9CA;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
 
@@ -218,6 +244,7 @@ con una forma especifica
       border-width: 250px 145px 0px;
       transform: translate(0%, 0%) rotate(-210deg);
       border-color: transparent transparent transparent #641E16;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
 
@@ -228,6 +255,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-210deg);
         border-left: 72.25px solid #641E16;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
     .boton-triangulo-nueve {
@@ -237,6 +265,7 @@ con una forma especifica
       border-width: 250px 145px 0px;
       transform: translate(0%, 0%) rotate(-240deg);
       border-color: transparent transparent transparent #F39C12;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
     .triangulo-rectangulo-nueve {
@@ -246,6 +275,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-240deg);
         border-left: 72.25px solid #F39C12;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
 
@@ -257,6 +287,7 @@ con una forma especifica
       border-width: 250px 145px 0px;
       transform: translate(0%, 0%) rotate(-270deg);
       border-color: transparent transparent transparent #2C3E50;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
     
@@ -267,6 +298,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-270deg);
         border-left: 72.25px solid #2C3E50;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
     .boton-triangulo-once {
@@ -276,6 +308,7 @@ con una forma especifica
       border-width: 250px 145px 0px;
       transform: translate(0%, 0%) rotate(-300deg);
       border-color: transparent transparent transparent #0B5345;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
     }
 
     .triangulo-rectangulo-once {
@@ -285,6 +318,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-300deg);
         border-left: 72.25px solid #0B5345;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
 
     .boton-triangulo-doce {
@@ -293,7 +327,9 @@ con una forma especifica
       left: 33.50%;
       border-width: 250px 145px 0px;
       transform: translate(0%, 0%) rotate(-330deg);
-      border-color: transparent transparent transparent #AF601A;
+      border-color: #AF601A #AF601A #AF601A #AF601A;
+      clip-path: polygon(0% 0%, 100% 210%, 0% 100%);
+
     }
 
     .triangulo-rectangulo-doce {
@@ -303,6 +339,7 @@ con una forma especifica
         transform: translate(0%, 0%) rotate(-330deg);
         border-left: 72.25px solid #AF601A;
         border-top: 125px solid transparent;
+        clip-path: polygon(1% 0%, 190% 210%, 0% 100%);
     }
     /* Rotar cada línea según su posición en el círculo */
     .line:nth-child(1) { transform: rotate(0deg); }
@@ -342,6 +379,8 @@ con una forma especifica
         width: 100%;
         height: 100%;
     }
+
+    
   </style>
   <title>Botón Triángulo</title>
 </head>
@@ -359,8 +398,9 @@ con una forma especifica
         <button class="triangulo-rectangulo-nueve" onclick="escribirTexto('Gm')"></button>
         <button class="triangulo-rectangulo-diez" onclick="escribirTexto('cm')"></button>
         <button class="triangulo-rectangulo-once" onclick="escribirTexto('fm')"></button>
-        <button class="triangulo-rectangulo-doce" onclick="escribirTexto('Bbm')"></button>
+        <button class="triangulo-rectangulo-doce" onclick="escribirTexto('Bbm')"></button>        
     </div>
+
     <button class="boton-triangulo" onclick="escribirTexto('F#')"></button>
     <button class="boton-triangulo-dos" onclick="escribirTexto('B')"></button>
     <button class="boton-triangulo-tres" onclick="escribirTexto('E')"></button>
@@ -373,8 +413,7 @@ con una forma especifica
     <button class="boton-triangulo-diez" onclick="escribirTexto('EbM')"></button>
     <button class="boton-triangulo-once" onclick="escribirTexto('AbM')"></button>
     <button class="boton-triangulo-doce" onclick="escribirTexto('DbM')"></button>
-
-
+    
 
     <div class="lines-container">
         <div class="lines">
@@ -395,12 +434,52 @@ con una forma especifica
     
   </div>
 
-  <input type="text" id="textoInput" style="margin:60px;" readonly>
-  
-  <script>
-    function escribirTexto(texto) {
-      document.getElementById('textoInput').value = texto ;
+
+  <div  class="respuestas" style="margin: 200px; display: flex; flex-direction: column;"> 
+    
+  <form id="cuestionario">
+    <label for="pregunta1">1. Introduce el número 1:</label>
+    <input type="text" id="pregunta1" name="pregunta1"><br><br>
+    
+    <label for="pregunta2">2. Introduce el número 2:</label>
+    <input type="text" id="pregunta2" name="pregunta2"><br><br>
+    
+    <label for="pregunta3">3. Introduce el número 3:</label>
+    <input type="text" id="pregunta3" name="pregunta3"><br><br>
+
+    <button type="button" onclick="verificarRespuestas()">Verificar respuestas</button>
+</form>
+
+
+<div id="resultado">
+    <?php echo isset($checkSvg) ? '<span id="svgContainer" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
+</div>
+
+<script>
+    function verificarRespuestas() {
+        var respuesta1 = document.getElementById('pregunta1').value;
+        var respuesta2 = document.getElementById('pregunta2').value;
+        var respuesta3 = document.getElementById('pregunta3').value;
+
+        if (respuesta1 === 'F#') {
+          svgContainer.style.display = 'inline-block';
+        } else {
+            console.log('Respuesta 1 incorrecta');
+        }
+
+        if (respuesta2 === 'Respuesta correcta para la pregunta 2') {
+            console.log('Respuesta 2 correcta');
+        } else {
+            console.log('Respuesta 2 incorrecta');
+        }
+
+        if (respuesta3 === 'Respuesta correcta para la pregunta 3') {
+            console.log('Respuesta 3 correcta');
+        } else {
+            console.log('Respuesta 3 incorrecta');
+        }
     }
-  </script>
+</script>
+</div>
 </body>
 </html>

@@ -127,6 +127,25 @@ $cencal='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="re
                     $joven1_1= $cencal;
                 }
 
+
+                $joven2 = isset($_POST['joven2'])?$_POST['joven2']:'';
+                if($joven2 === 'resta2'){
+                    $joven2_1 = $dibujo1;
+                }elseif($joven1 === ''){
+                    $joven2_1 = '';
+                }else{
+                    $joven2_1= $cencal;
+                }
+
+                $joven3 = isset($_POST['joven3'])?$_POST['joven3']:'';
+                if($joven3 === 'suma3'){
+                    $joven3_1 = $dibujo1;
+                }elseif($joven3 === ''){
+                    $joven3_1 = '';
+                }else{
+                    $joven3_1= $cencal;
+                }
+
                 $mujer63 = isset($_POST['mujer63'])?$_POST['mujer63']:'';
 
                 if($mujer63 === '1'){
@@ -136,7 +155,55 @@ $cencal='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="re
                 }else{
                     $mujer63_1 = $cencal;
                 }
+
+                $mujer66 = isset($_POST['mujer66'])?$_POST['mujer66']:'';
+
+                if($mujer66 === 'x'){
+                    $mujer66_1= $dibujo1;
+                }elseif($mujer66 === ''){
+                    $mujer66_1 = '';
+                }else{
+                    $mujer66_1 = $cencal;
+                }
+
+                $mujer67 = isset($_POST['mujer67'])?$_POST['mujer67']:'';
+
+                if($mujer67 === '1'){
+                    $mujer67_1= $dibujo1;
+                }elseif($mujer67 === ''){
+                    $mujer67_1 = '';
+                }else{
+                    $mujer67_1 = $cencal;
+                }
+
+
+                ///
+
+                $mujer64 = isset($_POST['mujer64'])?$_POST['mujer64']:'';
+
+                if($mujer64 === 'x'){
+                    $mujer64_1= $dibujo1;
+                }elseif($mujer64 === ''){
+                    $mujer64_1 = '';
+                }else{
+                    $mujer64_1 = $cencal;
+                }
+
+                $mujer65 = isset($_POST['mujer65'])?$_POST['mujer65']:'';
+
+                if($mujer65 === '2'){
+                    $mujer65_1= $dibujo1;
+                }elseif($mujer65 === ''){
+                    $mujer65_1 = '';
+                }else{
+                    $mujer65_1 = $cencal;
+                }
                 ?>
+                ?>
+
+                
+
+
 
                 
 
@@ -162,26 +229,26 @@ $cencal='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="re
                             <option value="suma1" <?php echo (isset($joven1) && $joven1 === 'suma1') ? 'selected' : ''; ?>>+</option>
                             <option value="resta1" <?php echo (isset($joven1) && $joven1 === 'resta1') ? 'selected' : ''; ?>>-</option>
                         </select>
-                        <input size=2 type="text" name="mujer63" id="">)
+                        <input size=2 type="text" name="mujer63" id="" value="<?php print isset($mujer63)?$mujer63:''; ?>">)
                         <hr>
 
 
-                        (<input size=2 type="text" name="mujer64" id="">
-                        <select name="" id="">
+                        (<input size=2 type="text" name="mujer64" id="" value="<?php print isset($mujer64)?$mujer64:''; ?>">
+                        <select name="joven2" id="">
                             <option value="" disable></option>
-                            <option value="">+</option>
-                            <option value="">-</option>
+                            <option value="suma2" <?php echo (isset($joven2) && $joven2 === 'suma2') ? 'selected' : ''; ?>>+</option>
+                            <option value="resta2" <?php echo (isset($joven2) && $joven2 === 'resta2') ? 'selected' : ''; ?>>-</option>
                         </select>
-                        <input size=2 type="text" name="mujer65" id="">)
+                        <input size=2 type="text" name="mujer65" id="" value="<?php print isset($mujer65)?$mujer65:''; ?>">)
 
 
-                        (<input size=2 type="text" name="mujer66" id="">
-                        <select name="" id="">
+                        (<input size=2 type="text" name="mujer66" id="" value="<?php print isset($mujer66)?$mujer66:''; ?>">
+                        <select name="joven3" id="">
                             <option value="" disable></option>
-                            <option value="">+</option>
-                            <option value="">-</option>
+                            <option value="suma3" <?php echo (isset($joven3) && $joven3 === 'suma3') ? 'selected' : ''; ?>>+</option>
+                            <option value="resta3" <?php echo (isset($joven3) && $joven3 === 'resta3') ? 'selected' : ''; ?>>-</option>
                         </select>
-                        <input size=2 type="text" name="" id="mujer67">)
+                        <input size=2 type="text" name="mujer67" id="" value="<?php print isset($mujer67)?$mujer67:''; ?>">)
 
                     </div>
                     <br><br>
@@ -191,7 +258,14 @@ $cencal='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="re
                     <?php print isset($mujer61_1)?$mujer61_1:'';?>
                     <?php print isset($mujer62_1)?$mujer62_1:'';?>
                     <?php print isset($joven1_1)?$joven1_1:'';?>
-                </li>
+                    <?php print isset($mujer63_1)?$mujer63_1:'';?>
+                    <?php print isset($mujer66_1)?$mujer66_1:'';?>
+                    <?php print isset($mujer67_1)?$mujer67_1:'';?>
+                    <?php print isset($mujer64_1)?$mujer64_1:'';?>
+                    <?php print isset($mujer65_1)?$mujer65_1:'';?>
+                    <?php print isset($joven2_1)?$joven2_1:'';?>
+                    <?php print isset($joven3_1)?$joven3_1:'';?>
+            </li>
             </ul>
             
             

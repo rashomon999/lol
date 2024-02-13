@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.seccion {
+    width: 50%; /* El 50% del ancho de la página menos el margen izquierdo */
+    padding: 20px; /* importante este padding*/
+    box-sizing: border-box;
+    height: 300vh;
+}
+
+/* Estilos específicos para la sección derecha */
+.seccion.derecha {
+    background-color: #f0f0f0;
+    margin-left: 15px;
+
+}
+
+/* Estilos específicos para la sección izquierda */
+.seccion.izquierda {
+    background-color: #e0e0e0;
+
+}

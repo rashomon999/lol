@@ -438,13 +438,13 @@ $hola = '';
   <div  class="respuestas" style="margin: 200px; display: flex; flex-direction: column;"> 
     
   <form id="cuestionario">
-    <label for="pregunta1">1. Introduce el número 1:</label>
-    <input type="text" id="pregunta1" name="pregunta1"><br><br>
+    <label for="pregunta1">1. Introduce el sexto grado:</label>
+    <input type="text" id="pregunta1" name="pregunta1" ><br><br>
     
-    <label for="pregunta2">2. Introduce el número 2:</label>
+    <label for="pregunta2">2. Introduce cuarto grado:</label>
     <input type="text" id="pregunta2" name="pregunta2"><br><br>
     
-    <label for="pregunta3">3. Introduce el número 3:</label>
+    <label for="pregunta3">3. Introduce el quinto grado:</label>
     <input type="text" id="pregunta3" name="pregunta3"><br><br>
 
     <button type="button" onclick="verificarRespuestas()">Verificar respuestas</button>
@@ -453,22 +453,28 @@ $hola = '';
 
 <div id="resultado">
     <?php echo isset($checkSvg) ? '<span id="svgContainer" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
+    <?php echo isset($checkSvg) ? '<span id="svgContainer2" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
 </div>
 
 <script>
+
+    function escribirTexto(texto) {
+      document.getElementById('pregunta1').value = texto ;
+      }
+
     function verificarRespuestas() {
         var respuesta1 = document.getElementById('pregunta1').value;
         var respuesta2 = document.getElementById('pregunta2').value;
         var respuesta3 = document.getElementById('pregunta3').value;
 
-        if (respuesta1 === 'F#') {
+        if (respuesta1 === 'D#') {
           svgContainer.style.display = 'inline-block';
         } else {
             console.log('Respuesta 1 incorrecta');
         }
 
-        if (respuesta2 === 'Respuesta correcta para la pregunta 2') {
-            console.log('Respuesta 2 correcta');
+        if (respuesta2 === 'B') {
+          svgContainer2.style.display = 'inline-block';
         } else {
             console.log('Respuesta 2 incorrecta');
         }

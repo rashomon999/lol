@@ -8,6 +8,12 @@ con una forma especifica
 if($_POST){
   print('holaaa');
 }
+
+$checkSvg ='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+<path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+</svg>';
+
+$hola = '';
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +25,9 @@ if($_POST){
     body {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      align-items: Top;
+      height: 500vh;
+      margin: 0px;
     }
 
     .contenedor {
@@ -33,6 +39,7 @@ if($_POST){
       border: 2px solid #000;
       overflow:hidden;
       transform: rotate(15deg); /* Rotar el círculo 15 grados hacia la derecha */
+      margin-top: 20px;
     }
 
     .inner-circle {
@@ -372,13 +379,15 @@ if($_POST){
         width: 100%;
         height: 100%;
     }
+
+    
   </style>
   <title>Botón Triángulo</title>
 </head>
 <body>
   <div class="contenedor">
     <div class="inner-circle">
-        <button class="triangulo-rectangulo" onclick="escribirTexto('D#')"></button>
+        <button class="triangulo-rectangulo" onclick="escribirTexto('D#m')"></button>
         <button class="triangulo-rectangulo-dos" onclick="escribirTexto('G#m')"></button>
         <button class="triangulo-rectangulo-tres" onclick="escribirTexto('C#m')"></button>
         <button class="triangulo-rectangulo-cuatro" onclick="escribirTexto('F#m')"></button>
@@ -392,8 +401,8 @@ if($_POST){
         <button class="triangulo-rectangulo-doce" onclick="escribirTexto('Bbm')"></button>        
     </div>
 
-    <button class="boton-triangulo" onclick="escribirTexto('F#')"></button>
-    <button class="boton-triangulo-dos" onclick="escribirTexto('B')"></button>
+    <button class="boton-triangulo" onclick="escribirTexto('F#M')"></button>
+    <button class="boton-triangulo-dos" onclick="escribirTexto('BM')"></button>
     <button class="boton-triangulo-tres" onclick="escribirTexto('E')"></button>
     <button class="boton-triangulo-cuatro" onclick="escribirTexto('A')"></button>
     <button class="boton-triangulo-cinco" onclick="escribirTexto('D')"></button>
@@ -403,7 +412,7 @@ if($_POST){
     <button class="boton-triangulo-nueve" onclick="escribirTexto('BbM')"></button>
     <button class="boton-triangulo-diez" onclick="escribirTexto('EbM')"></button>
     <button class="boton-triangulo-once" onclick="escribirTexto('AbM')"></button>
-    <button class="boton-triangulo-doce" onclick="escribirTexto('DbM')"></button>
+    <button class="boton-triangulo-doce" onclick="escribirTexto('C#M')"></button>
     
 
     <div class="lines-container">
@@ -426,14 +435,73 @@ if($_POST){
   </div>
 
 
-  
-      <input type="text" id="textoInput" style="margin:60px;" readonly>
-  
+  <div  class="respuestas" style="margin: 200px; display: flex; flex-direction: column;"> 
+    
+  <form id="cuestionario">
+    F#: <br><br>
+    <label for="pregunta1">1. Introduce el sexto grado:</label> 
+    <input type="text" id="pregunta1" name="pregunta1" > <button type="button" onclick="verificarRespuestas()">Verificar respuestas</button> <br><br>
+    
+    <label for="pregunta2">2. Introduce cuarto grado:</label>
+    <input type="text" id="pregunta2" name="pregunta2"> <button type="button" onclick="verificarRespuestas()">Verificar respuestas</button> <br><br>
+    
+    <label for="pregunta3">3. Introduce el quinto grado:</label>
+    <input type="text" id="pregunta3" name="pregunta3"><br><br> <button type="button" onclick="verificarRespuestas()">Verificar respuestas</button>
 
-  <script>
+    
+</form>
+
+
+<div id="resultado">
+    <?php echo isset($checkSvg) ? '<span id="svgContainer" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
+    <?php echo isset($checkSvg) ? '<span id="svgContainer2" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
+
+    <?php echo isset($checkSvg) ? '<span id="svgContainer3" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
+</div>
+
+<script>
+
+    var inputActual = 1; // Variable para rastrear el input actual
+
     function escribirTexto(texto) {
-      document.getElementById('textoInput').value = texto ;
+        var inputActualId = 'pregunta' + inputActual;
+        var inputActualElement = document.getElementById(inputActualId);
+
+        // Verificar si el valor actual del input es incorrecto
+        if (inputActualElement.value.trim() === '') {
+            inputActualElement.value = texto; // Asignar el texto al input actual
+            inputActual++; // Pasar al siguiente input
+        } else {
+            // El valor del input actual es correcto, pasa al siguiente input
+            inputActual++;
+            escribirTexto(texto);
+        }
     }
-  </script>
+
+    function verificarRespuestas() {
+        var respuesta1 = document.getElementById('pregunta1').value;
+        var respuesta2 = document.getElementById('pregunta2').value;
+        var respuesta3 = document.getElementById('pregunta3').value;
+
+        if (respuesta1 === 'D#m') {
+          svgContainer.style.display = 'inline-block';
+        } else {
+            console.log('Respuesta 1 incorrecta');
+        }
+
+        if (respuesta2 === 'BM') {
+          svgContainer2.style.display = 'inline-block';
+        } else {
+            console.log('Respuesta 2 incorrecta');
+        }
+
+        if (respuesta3 === 'C#M') {
+          svgContainer3.style.display = 'inline-block';
+        } else {
+            console.log('Respuesta 3 incorrecta');
+        }
+    }
+</script>
+</div>
 </body>
 </html>

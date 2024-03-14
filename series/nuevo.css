@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.seccion {
+    width: 50%; /* El 50% del ancho de la página menos el margen izquierdo */
+    padding: 20px; /* importante este padding*/
+    box-sizing: border-box;
+    height: 160vh;
+}
+
+/* Estilos específicos para la sección derecha */
+.seccion.derecha {
+    background-color: #f0f0f0;
+    margin-left: 15px;
+
+}
+
+/* Estilos específicos para la sección izquierda */
+.seccion.izquierda {
+    background-color: #e0e0e0;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centra los elementos a lo largo del eje transversal, 
+    que en este caso es vertical. Esto asegura que los elementos estén centrados 
+    verticalmente dentro del contenedor. */
+    
+    justify-content: center; /*Centra los elementos a lo largo del eje principal,
+     que en este caso es horizontal. Esto asegura que los elementos estén centrados
+      horizontalmente dentro del contenedor. */
+    text-align: center;
+    position: fixed; /* Establece la posición del contenedor como fija. Un elemento
+     con posición fija se mantiene en la    misma posición incluso cuando la página
+      se desplaza. */
+    
+    bottom: 0; /* Esto establece que el borde inferior del contenedor estará alineado con el borde inferior de su contenedor principal (probablemente el viewport del navegador).*/
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-right: 10px;
+  }

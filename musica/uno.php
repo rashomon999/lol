@@ -387,7 +387,7 @@ $hola = '';
 <body>
   <div class="contenedor">
     <div class="inner-circle">
-        <button class="triangulo-rectangulo" onclick="escribirTexto('D#')"></button>
+        <button class="triangulo-rectangulo" onclick="escribirTexto('D#m')"></button>
         <button class="triangulo-rectangulo-dos" onclick="escribirTexto('G#m')"></button>
         <button class="triangulo-rectangulo-tres" onclick="escribirTexto('C#m')"></button>
         <button class="triangulo-rectangulo-cuatro" onclick="escribirTexto('F#m')"></button>
@@ -401,8 +401,8 @@ $hola = '';
         <button class="triangulo-rectangulo-doce" onclick="escribirTexto('Bbm')"></button>        
     </div>
 
-    <button class="boton-triangulo" onclick="escribirTexto('F#')"></button>
-    <button class="boton-triangulo-dos" onclick="escribirTexto('B')"></button>
+    <button class="boton-triangulo" onclick="escribirTexto('F#M')"></button>
+    <button class="boton-triangulo-dos" onclick="escribirTexto('BM')"></button>
     <button class="boton-triangulo-tres" onclick="escribirTexto('E')"></button>
     <button class="boton-triangulo-cuatro" onclick="escribirTexto('A')"></button>
     <button class="boton-triangulo-cinco" onclick="escribirTexto('D')"></button>
@@ -412,7 +412,7 @@ $hola = '';
     <button class="boton-triangulo-nueve" onclick="escribirTexto('BbM')"></button>
     <button class="boton-triangulo-diez" onclick="escribirTexto('EbM')"></button>
     <button class="boton-triangulo-once" onclick="escribirTexto('AbM')"></button>
-    <button class="boton-triangulo-doce" onclick="escribirTexto('DbM')"></button>
+    <button class="boton-triangulo-doce" onclick="escribirTexto('C#M')"></button>
     
 
     <div class="lines-container">
@@ -438,6 +438,7 @@ $hola = '';
   <div  class="respuestas" style="margin: 200px; display: flex; flex-direction: column;"> 
     
   <form id="cuestionario">
+    F#: <br><br>
     <label for="pregunta1">1. Introduce el sexto grado:</label>
     <input type="text" id="pregunta1" name="pregunta1" ><br><br>
     
@@ -454,33 +455,48 @@ $hola = '';
 <div id="resultado">
     <?php echo isset($checkSvg) ? '<span id="svgContainer" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
     <?php echo isset($checkSvg) ? '<span id="svgContainer2" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
+
+    <?php echo isset($checkSvg) ? '<span id="svgContainer3" style="display: none;">' . $checkSvg . '</span>' : ''; ?>
 </div>
 
 <script>
 
+    var inputActual = 1; // Variable para rastrear el input actual
+
     function escribirTexto(texto) {
-      document.getElementById('pregunta1').value = texto ;
-      }
+        var inputActualId = 'pregunta' + inputActual;
+        var inputActualElement = document.getElementById(inputActualId);
+
+        // Verificar si el valor actual del input es incorrecto
+        if (inputActualElement.value.trim() === '') {
+            inputActualElement.value = texto; // Asignar el texto al input actual
+            inputActual++; // Pasar al siguiente input
+        } else {
+            // El valor del input actual es correcto, pasa al siguiente input
+            inputActual++;
+            escribirTexto(texto);
+        }
+    }
 
     function verificarRespuestas() {
         var respuesta1 = document.getElementById('pregunta1').value;
         var respuesta2 = document.getElementById('pregunta2').value;
         var respuesta3 = document.getElementById('pregunta3').value;
 
-        if (respuesta1 === 'D#') {
+        if (respuesta1 === 'D#m') {
           svgContainer.style.display = 'inline-block';
         } else {
             console.log('Respuesta 1 incorrecta');
         }
 
-        if (respuesta2 === 'B') {
+        if (respuesta2 === 'BM') {
           svgContainer2.style.display = 'inline-block';
         } else {
             console.log('Respuesta 2 incorrecta');
         }
 
-        if (respuesta3 === 'Respuesta correcta para la pregunta 3') {
-            console.log('Respuesta 3 correcta');
+        if (respuesta3 === 'C#M') {
+          svgContainer3.style.display = 'inline-block';
         } else {
             console.log('Respuesta 3 incorrecta');
         }
